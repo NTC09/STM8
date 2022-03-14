@@ -61,12 +61,15 @@ RoHS: Yes
 #define key_U       0x3E
 #define key_A       0x77
 #define key__       0x40
-#define key_T       0x45
+#define key_T       0x46
 #define key_d       0x5E
 #define key_F       0x71
 #define key_E       0x79
 #define key_r       0x50
+
+#define Fmax        5
 //Funtions define===============================================================
+int power(int a,int b);
 void stm8_init(void);
 void gpio_init(void);
 void interrupt_config(void);
@@ -77,23 +80,26 @@ void uart2_send_str(char *data);
 void adc_init(void);
 void adc_read(void);
 void seg7(unsigned char hex);
-void led_show(short value);
+void led_show(int value);
 void tem_show(float value);
-void error_show(char code);
-void setting_show(short value);
+void error_show(int code);
+void setting_show(int value);
 void delay(long int time);
 void button_handler(void);
 void power_button(void);
 void eeprom_rw_enable(void);
 void eeprom_rw_disable(void);
-void write_eeprom(unsigned char data,unsigned short eep_address);
-unsigned char read_eeprom(unsigned short eep_address);
+void write_eeprom(unsigned char data,unsigned int eep_address);
+unsigned char read_eeprom(unsigned int eep_address);
 void reload_data_eeprom(void);
+float load_float_eeprom(char start_addr);
 void write_data_eeprom(void);
+void write_float_eeprom(float value,char startAddr);
+void timer1_init(void);
 void timer2_init(void);
-short timer2_get_couter(void);
-void timer2_set_couter(short value);
+int timer2_get_couter(void);
+void timer2_set_couter(int value);
 void timer4_init(void);
 void timer3_init(void);
-signed char get_data(short addr);
+void re_cal_ntc(void);
 #endif

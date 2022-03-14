@@ -35,15 +35,15 @@ void err_respond(void);
 
 char hex(char input);
 char asc(char input);
-void short_to_4asc(short _hex, char *_key1,char*_key2,char *_key3, char *_key4);
-void asc4_to_short(short *_short, 
+void int_to_4asc(int _hex, char *_key1,char*_key2,char *_key3, char *_key4);
+void asc4_to_int(int *_int, 
       char _key1,char _key2,char _key3, char _key4);
 void Function_code_handler(char Command);
 void holding_registers_read(void);
 void single_register_read(void);
 void write_multi_registers(void);
 
-unsigned short CRC16 (char *puchMsg, char usDataLen) ;
+unsigned int CRC16 (char *puchMsg, char usDataLen) ;
 char asc_check_sum(char *nData, int wLength);
 
 static unsigned char auchCRCHi[] = {
